@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project1</title>
+    <style>
+        .parent {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .button {
+            margin: 10px;
+        }
+
+        #grey {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            background-color: grey;
+        }
+
+        #white {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            background-color: white;
+        }
+
+        #blue {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            background-color: blue;
+        }
+
+        #yellow {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>color scheme switcher</h1>
+    <div class="parent">
+        <div class="button" id="grey"></div>
+        <div class="button" id="white"></div>
+        <div class="button" id="blue"></div>
+        <div class="button" id="yellow"></div>
+    </div>
+    <h2>try clicling one of the colors above </h2> <br> <br>
+    <h2>to change the color of this page!</h2>
+
+    <script>
+        let buttons = document.querySelectorAll(".button");
+        console.log(buttons);
+        let body = document.querySelector("body");
+
+        // so after printing it we can see in its prototype that it gives us a option for foreach so we can apply the foreach loop for all the buttons
+
+        buttons.forEach((button) => {
+            console.log(button);
+
+            button.addEventListener("click", function (event) {
+                console.log(event);
+                console.log(event.target);
+
+                switch (event.target.id) {
+                    case 'grey':
+                        body.style.backgroundColor = "grey"
+                        break;
+                    case "white":
+                        body.style.backgroundColor = "white"
+                        break;
+                    case 'blue':
+                        body.style.backgroundColor = "blue"
+                        break;
+                    case 'yellow':
+                        body.style.backgroundColor = "yellow"
+                        break;
+                    default:
+                        body.style.backgroundColor = "white"
+
+                }
+                //    if(event.target.id==="grey"){
+                //     body.style.backgroundColor="grey"
+                //    }
+                //    if(event.target.id==="white"){
+                //     body.style.backgroundColor="white"
+                //    }
+                //    if(event.target.id==="blue"){
+                //     body.style.backgroundColor="blue"
+                //    }
+                //    if(event.target.id==="yellow"){
+                //     body.style.backgroundColor="yellow"
+                //    }
+
+            })
+        });
+
+    </script>
+</body>
+
+</html>
